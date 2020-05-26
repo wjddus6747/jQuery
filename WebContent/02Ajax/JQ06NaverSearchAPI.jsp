@@ -22,6 +22,22 @@ $(function(){
 			error : errFunc
 		});
 	});
+	
+	
+	$('#startNum').change(function() {
+		$.ajax({
+			url : "../NaverSearchAPI.do",
+			type :"get",
+			data : {
+				keyword : $('#keyword').val(),
+				startNum : $('#startNum option:selected').val()
+			},
+			dataType : "json",
+			success : sucFuncJson,
+			error : errFunc
+		});
+	});
+	
 });
 
 function sucFuncJson(d) {
@@ -30,6 +46,7 @@ function sucFuncJson(d) {
 	
 	$.each(d.items, function(index, item) {
 		str+= "<ul>";
+		str+="<li>"+(index+1)+"</li>";
 		str+=" <li>"+item.title+"</li>";
 		str+=" <li>"+item.description+"</li>";
 		str+=" <li>"+item.bloggername+"</li>";
