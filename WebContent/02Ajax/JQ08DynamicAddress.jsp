@@ -36,7 +36,7 @@
 					//console.log(d);
 					var optionStr = "";
 					optionStr += "<option value=''>";
-					optionStr += "--구군을 선택하세요--";
+					optionStr += "--구군을 선택하세--";
 					optionStr += "</option>";
 					/*
 		               콜백받은 JSON배열을 갯수만큼 반복하기 위해 $.each()메소드를 사용한다.
